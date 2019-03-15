@@ -1,0 +1,20 @@
+# 博客仓库本地路径(绝对路径)
+blog_repo_path: E:\工程\Ghamster0.github.io\
+# 图片文件仓库本地路径
+pic_repo_path: E:\工程\IHService\
+# 码云(等)图床主页
+pic_homepage: https://ghamster.gitee.io/ihservice/
+
+post:
+  # 只修稿markdown类型的post
+  markdown_only: true
+  # 只修改最近小时内创建或修改的md文件的链接
+  modify_recent:
+    enable: true
+    time: # (h)
+
+# 文件路径设置
+## 默认图片存放位置(默认文件夹名称必须和所有post名称不同)
+default_images_folder: source/images
+## 使用source下，与post标题相同的文件名时，是否将' '改为'_'
+replace_space_underline: true
