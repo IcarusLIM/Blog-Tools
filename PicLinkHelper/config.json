@@ -1,0 +1,10 @@
+{
+  "blog_repo_path": "D:\\pcode\\Ghamster0.github.io\\",
+  "pic_repo_path": "D:\\pcode\\IHService\\",
+  "pic_homepage": "https://ghamster.gitee.io/ihservice/",
+  "recent_only": {
+    "value": 1,
+    "unit": "h"
+  },
+  "default_images_folder": "source/images"
+}
