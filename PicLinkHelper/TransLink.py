@@ -71,7 +71,7 @@ def recover_blog(blog):
             continue
         if image.parent.samefile(default_rd):
             copy_file(image, default_od / image.name, force=False)
-            origin_link = default_od.name + '/' + image.name
+            origin_link = str(relative_path(work_dir, default_od) / image.name)
         else:
             copy_file(image, origin_dir / image.name, force=False)
             origin_link = origin_dir.name + '/' + image.name
@@ -118,6 +118,21 @@ def file_exist(path):
         return path.exists() and path.is_file()
     except OSError:
         return False
+
+
+def relative_path(start, to):
+    prefix = Path('')
+    while True:
+        try:
+            rel_path = to.relative_to(start)
+            full_rel_path = prefix / rel_path
+            return full_rel_path
+        except ValueError:
+            tmp = start.parent
+            if tmp.samefile(start):
+                raise Exception("Fail to find relative path, that can't happen")
+            start = tmp
+            prefix = prefix / '..'
 
 
 if __name__ == "__main__":
